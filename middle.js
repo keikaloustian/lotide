@@ -44,7 +44,7 @@ const middle = (array) => {
   }
   
   return output;
-  
+
 };
 
 
