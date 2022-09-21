@@ -17,3 +17,16 @@ const countLetters  = function(sentence) {
 
 
 // Test cases
+// const testSentence = 'Lighthouse in the lit house'; 
+// const testResult = countLetters(testSentence);
+// assertEqual(testResult[L], 1);
+// assertEqual(testResult[i], 3);
+// assertEqual(testResult[g], 1);
+// assertEqual(testResult[h], 4);
+// assertEqual(testResult[t], 3);
+// assertEqual(testResult[o], 2);
+// assertEqual(testResult[u], 2);
+// assertEqual(testResult[s], 2);
+// assertEqual(testResult[e], 3);
+// assertEqual(testResult[n], 1);
+// assertEqual(testResult[l], 1);
