@@ -10,14 +10,16 @@ const assertEqual = function(actual, expected) {
 
 // Main function
 const countLetters  = function(sentence) {
-  // Take in sentence as string
-
+  // Take in sentence as string, split and join to eliminate spaces
+  sentence.split(' ').join('');
+  
+  // Examine each character and if it's new, create key and set value to 1. If it's repeated, increment count
   // Return object with the letters encountered as keys and their respective counts as values
 };
 
-
+const testSentence = 'Lighthouse in the lit house'; 
+countLetters(testSentence);
 // Test cases
-// const testSentence = 'Lighthouse in the lit house'; 
 // const testResult = countLetters(testSentence);
 // assertEqual(testResult[L], 1);
 // assertEqual(testResult[i], 3);
