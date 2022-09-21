@@ -25,6 +25,23 @@ const assertArraysEqual = function(array1, array2) {
 
 // Main function
 const letterPositions = function(sentence) {
+  let output = {};
+  
+  // Take in sentence as string, split and join to eliminate spaces
+  const processed = sentence.split(' ').join('');
+
+  // Loop through processed string
+  // If character is repeated, add current index i to the respective key (or it's value array) in output
+  // If character is new, create it's key in output object with value set to it's index
+  for (let i = 0; i < processed.length; i++) {
+    if (output[processed[i]]) {
+      output[processed[i]].push(i);
+    } else {
+      output[processed[i]] = [i];
+    }
+  }
+  
+  return output;
 
 };
 
@@ -32,8 +49,9 @@ const letterPositions = function(sentence) {
 // Test cases
 const testSentence = 'hello';
 const testResult = letterPositions(testSentence);
+console.log(testResult);
 
-assertArraysEqual(testResult['h'], [0]);
-assertArraysEqual(testResult['e'], [1]);
-assertArraysEqual(testResult['l'], [2, 3]);
-assertArraysEqual(testResult['o'], [4]);
+// assertArraysEqual(testResult['h'], [0]);
+// assertArraysEqual(testResult['e'], [1]);
+// assertArraysEqual(testResult['l'], [2, 3]);
+// assertArraysEqual(testResult['o'], [4]);
