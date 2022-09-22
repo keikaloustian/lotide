@@ -19,7 +19,7 @@ const findKeyByValue = function(lookupObject, searchValue) {
   }
   
   // If no matches are found, no explicit returns needed
-  // If a function doesn't explicitly return anything, it'll output undefined by default
+  // If a function doesn't explicitly return anything, it'll return undefined by default
 
 };
 
