@@ -31,12 +31,12 @@ const letterPositions = function(sentence) {
   const processed = sentence.split(' ').join('');
 
   // Loop through processed string
-  // If character is repeated, add current index i to the respective key (or it's value array) in output
-  // If character is new, create it's key in output object with value set to it's index
   for (let i = 0; i < processed.length; i++) {
     if (output[processed[i]]) {
+      // If character is repeated, update value array of respective key in output
       output[processed[i]].push(i);
     } else {
+      // If character is new, create a key for it in output object with value set to it's index
       output[processed[i]] = [i];
     }
   }
@@ -49,9 +49,8 @@ const letterPositions = function(sentence) {
 // Test cases
 const testSentence = 'hello';
 const testResult = letterPositions(testSentence);
-console.log(testResult);
 
-// assertArraysEqual(testResult['h'], [0]);
-// assertArraysEqual(testResult['e'], [1]);
-// assertArraysEqual(testResult['l'], [2, 3]);
-// assertArraysEqual(testResult['o'], [4]);
+assertArraysEqual(testResult['h'], [0]);
+assertArraysEqual(testResult['e'], [1]);
+assertArraysEqual(testResult['l'], [2, 3]);
+assertArraysEqual(testResult['o'], [4]);
