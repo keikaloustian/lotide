@@ -1,25 +1,6 @@
-// Support functions
-const eqArrays = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    // Compare arr1[i] to arr2[2]
-    // If comparison evaluates to false, return false
-    if (!(arr1[i] === arr2[i])) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(array1, array2) {
-  if (eqArrays(array1, array2)) {
-    console.log(`😊 Assertion passed: ${array1} === ${array2}`);
-  } else {
-    console.log(`😡 Assertion failed: ${array1} !== ${array2}`);
-  }
-};
+// Support function(s)
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
 
 
 // Main function
@@ -35,13 +16,15 @@ const without = (source, itemsToRemove) => {
 };
 
 
-// Test cases
-assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
-assertArraysEqual(without([1, 2, 3], []), [1, 2, 3]);
-assertArraysEqual(without(['1', '2', '3'], [1, 2, '3']), ['1', '2']);
-assertArraysEqual(without(['A', 'B', 'C'], [1, 'B']), ['A', 'C']);
-assertArraysEqual(without([true, false, false], [false]), [true]);
+// // Test cases
+// assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
+// assertArraysEqual(without([1, 2, 3], []), [1, 2, 3]);
+// assertArraysEqual(without(['1', '2', '3'], [1, 2, '3']), ['1', '2']);
+// assertArraysEqual(without(['A', 'B', 'C'], [1, 'B']), ['A', 'C']);
+// assertArraysEqual(without([true, false, false], [false]), [true]);
 
-const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]);
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+// const words = ["hello", "world", "lighthouse"];
+// without(words, ["lighthouse"]);
+// assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+
+module.exports = without;

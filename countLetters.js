@@ -1,11 +1,5 @@
 // Support function(s)
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`😊 Assertion passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`😡 Assertion failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
 
 
 // Main function
@@ -30,36 +24,39 @@ const countLetters  = function(sentence) {
 };
 
 
-// Test cases
-console.log('\nTest #1\n');
-const testSentence = 'Lighthouse in the lit house';
-const testResult = countLetters(testSentence);
+// // Test cases
+// console.log('\nTest #1\n');
+// const testSentence = 'Lighthouse in the lit house';
+// const testResult = countLetters(testSentence);
 
-assertEqual(testResult['L'], 1);
-assertEqual(testResult['i'], 3);
-assertEqual(testResult['g'], 1);
-assertEqual(testResult['h'], 4);
-assertEqual(testResult['t'], 3);
-assertEqual(testResult['o'], 2);
-assertEqual(testResult['u'], 2);
-assertEqual(testResult['s'], 2);
-assertEqual(testResult['e'], 3);
-assertEqual(testResult['n'], 1);
-assertEqual(testResult['l'], 1);
+// assertEqual(testResult['L'], 1);
+// assertEqual(testResult['i'], 3);
+// assertEqual(testResult['g'], 1);
+// assertEqual(testResult['h'], 4);
+// assertEqual(testResult['t'], 3);
+// assertEqual(testResult['o'], 2);
+// assertEqual(testResult['u'], 2);
+// assertEqual(testResult['s'], 2);
+// assertEqual(testResult['e'], 3);
+// assertEqual(testResult['n'], 1);
+// assertEqual(testResult['l'], 1);
 
-console.log('\nTest #2\n');
-const testSentence2 = '21 lighthouses!';
-const testResult2 = countLetters(testSentence2);
+// console.log('\nTest #2\n');
+// const testSentence2 = '21 lighthouses!';
+// const testResult2 = countLetters(testSentence2);
 
-assertEqual(testResult2['2'], 1);
-assertEqual(testResult2['1'], 1);
-assertEqual(testResult2['l'], 1);
-assertEqual(testResult2['i'], 1);
-assertEqual(testResult2['g'], 1);
-assertEqual(testResult2['h'], 2);
-assertEqual(testResult2['t'], 1);
-assertEqual(testResult2['o'], 1);
-assertEqual(testResult2['u'], 1);
-assertEqual(testResult2['s'], 2);
-assertEqual(testResult2['e'], 1);
-assertEqual(testResult2['!'], 1);
+// assertEqual(testResult2['2'], 1);
+// assertEqual(testResult2['1'], 1);
+// assertEqual(testResult2['l'], 1);
+// assertEqual(testResult2['i'], 1);
+// assertEqual(testResult2['g'], 1);
+// assertEqual(testResult2['h'], 2);
+// assertEqual(testResult2['t'], 1);
+// assertEqual(testResult2['o'], 1);
+// assertEqual(testResult2['u'], 1);
+// assertEqual(testResult2['s'], 2);
+// assertEqual(testResult2['e'], 1);
+// assertEqual(testResult2['!'], 1);
+
+
+module.exports = countLetters;

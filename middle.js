@@ -1,25 +1,6 @@
 // Support functions
-const eqArrays = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    // Compare arr1[i] to arr2[2]
-    // If comparison evaluates to false, return false
-    if (!(arr1[i] === arr2[i])) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(array1, array2) {
-  if (eqArrays(array1, array2)) {
-    console.log(`😊 Assertion passed: ${array1} === ${array2}`);
-  } else {
-    console.log(`😡 Assertion failed: ${array1} !== ${array2}`);
-  }
-};
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
 
 
 // Main function
@@ -48,10 +29,13 @@ const middle = (array) => {
 };
 
 
-// Test cases
-assertArraysEqual(middle([]), []);
-assertArraysEqual(middle([0]), []);
-assertArraysEqual(middle([0, 1]), []);
-assertArraysEqual(middle([0, 1, 2]), [1]);
-assertArraysEqual(middle(['a', 'b', 'c', 'd']), ['b', 'c']);
-assertArraysEqual(middle([NaN, NaN, undefined, null, NaN, NaN]), [undefined, null]);
+// // Test cases
+// assertArraysEqual(middle([]), []);
+// assertArraysEqual(middle([0]), []);
+// assertArraysEqual(middle([0, 1]), []);
+// assertArraysEqual(middle([0, 1, 2]), [1]);
+// assertArraysEqual(middle(['a', 'b', 'c', 'd']), ['b', 'c']);
+// assertArraysEqual(middle([NaN, NaN, undefined, null, NaN, NaN]), [undefined, null]);
+
+
+module.exports = middle;
